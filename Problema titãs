@@ -1,0 +1,30 @@
+#Receber as informações de número de titãs atacando a muralha e tamanho das muralhas
+n, x = map(int, input().split())
+
+#Variáveis para altura total dos titãs somada e quantidade de muralhas
+tita: int = 0
+muralha: int = 1
+
+#Receber ordem de titãs atacando, com as letras P M G representando tamanhos
+T = input()
+
+#Receber  tamanhos dos titãs Pequenos, Médios e Grandes
+p, m, g = map(int, input().split())
+
+#Ler cada valor de T separadamente e somar baseada nas informações de tamanho dos titãs
+for y in T:
+  if y == "P":
+    tita = tita + p
+  elif y == "M":
+    tita = tita + m
+  elif y == "G":
+    tita = tita + g
+
+#Retorna a quantidade de muralhas calculando a altura total somada dos titãs e altura total das muralhas
+y = x
+
+while tita > x:
+  muralha = muralha + 1
+  x = x + y
+
+print(muralha)
